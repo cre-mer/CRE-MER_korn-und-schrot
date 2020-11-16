@@ -3,13 +3,12 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Container } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route, useLocation, useParams } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, useLocation, useParams } from "react-router-dom";
 
 /*
  * Import internal dependencies
  */
-import Menu from './components/Menu';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
@@ -17,15 +16,15 @@ import Datenschutz from './pages/Datenschutz';
 function App () {
 	return (
 		<>
-			<Router>
-				<Menu />
-				<Container maxWidth="lg">
+			<Router basename="/" hashType="noslash">
+				<div>
 					<Switch>
-						<Route path="/?p=datenschutz" component={ Datenschutz } />
-						<Route path="/?p=impressum" component={ Impressum } />
+						<Route path="/datenschutz" component={ Datenschutz } />
+						<Route path="/impressum" component={ Impressum } />
 						<Route path="/" component={ Home } />
 					</Switch>
-				</Container>
+				</div>
+				<Footer/>
 			</Router>
 		</>
 	)

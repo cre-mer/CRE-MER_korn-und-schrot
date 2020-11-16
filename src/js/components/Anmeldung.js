@@ -125,7 +125,7 @@ export default function Anmeldung() {
 			onClick={handleNext}
 			className={classes.button}
 			>
-			Send
+			Absenden
 			</Button>
 		</Paper>
 		)}

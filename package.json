@@ -9,7 +9,8 @@
 		"prod": "npm run production",
 		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"css-watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --watch --hide-modules --env.mixfile=webpack.css.js --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"css-dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env.mixfile=webpack.css.js --config=node_modules/laravel-mix/setup/webpack.config.js"
+		"css-dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env.mixfile=webpack.css.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"css-production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --env.mixfile=webpack.css.js --config=node_modules/laravel-mix/setup/webpack.config.js"
 	},
 	"devDependencies": {
 		"@babel/preset-react": "^7.0.0",
@@ -31,9 +32,11 @@
 		"@material-ui/lab": "^4.0.0-alpha.56",
 		"@popperjs/core": "^2.4.4",
 		"bootstrap-icons": "^1.0.0-alpha5",
+		"fbo-react-lib": "0.0.1",
 		"material-ui-sass": "^0.7.5",
 		"react-router-dom": "^5.2.0",
 		"react-sanitized-html": "^2.0.0",
-		"sanitize-html": "^1.27.4"
+		"sanitize-html": "^1.27.4",
+		"tailwindcss": "^1.9.6"
 	}
 }

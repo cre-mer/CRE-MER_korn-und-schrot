@@ -20,9 +20,9 @@ export default function FormDialog(props) {
 
 	return (
 	<div>
-		<Button variant="outlined" color="primary" onClick={handleClickOpen}>
+		<button className="border-2 border-solid border-orange hover:bg-orange text-orange hover:text-white rounded py-2 px-4 mt-6 mb-2 transition-colors duration-300" onClick={handleClickOpen}>
 			{title}
-		</Button>
+		</button>
 		<Dialog fullWidth open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
 		<DialogTitle id="form-dialog-title">{title}</DialogTitle>
 		<DialogContent>
