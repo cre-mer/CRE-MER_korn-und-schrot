@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Menu(props) {
   const classes = useStyles();
 
+  const [expanded, setExpanded] = React.useState(false);
+
   return (
       <div className="relative bg-white overflow-hidden mb-24">
       <div className="max-w-screen-xl mx-auto">
@@ -39,7 +41,7 @@ export default function Menu(props) {
       			<img className="h-8 w-auto sm:h-24" src="/src/img/logo.png" alt="Logo"/>
       		  </Link>
       		  <div className="-mr-2 flex items-center md:hidden">
-      			<button type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
+      			<button onClick={() => setExpanded(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
       			  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
       				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
       			  </svg>
@@ -56,19 +58,19 @@ export default function Menu(props) {
         <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
       	<div className="rounded-lg shadow-md">
       	  <div className="rounded-lg bg-white shadow-xs overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
-      		<div className="px-5 pt-4 flex items-center justify-between">
+      		<div className={`px-5 pt-4 flex items-center justify-between ${expanded ? 'expanded' : 'hidden'}`}>
       		  <div>
-      			<img className="h-8 w-auto" src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg" alt=""/>
+      			<img className="h-8 w-auto" src="/src/img/logo.png" alt="Logo"/>
       		  </div>
       		  <div className="-mr-2">
-      			<button type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Close menu">
+      			<button onClick={() => setExpanded(false)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Close menu">
       			  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
       				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
       			  </svg>
       			</button>
       		  </div>
       		</div>
-      		<div className="px-2 pt-2 pb-3">
+      		<div className={`px-2 pt-2 pb-3 ${expanded ? 'expanded' : 'hidden'}`}>
       		  <Link to="/impressum" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out" role="menuitem">Impressum</Link>
       		  <Link to="/datenschutz" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out" role="menuitem">Datenschutz</Link>
       		</div>
