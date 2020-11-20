@@ -7,8 +7,8 @@ import React, { lazy } from 'react';
  * Import internal dependencies
  */
 import FormDialog from '../components/FormDialog';
-const Anmeldung = lazy(() => import('../components/Anmeldung'));
-const Shop = lazy(() => import('../components/Shop'));
+import Anmeldung from '../components/Anmeldung';
+import Shop from '../components/Shop';
 import Recipes from '../components/Recipes';
 import ContactCTA from '../components/ContactCTA';
 import Menu from '../components/Menu';

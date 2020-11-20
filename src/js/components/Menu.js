@@ -38,7 +38,7 @@ export default function Menu(props) {
       	  <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
       		<div className="flex items-center justify-between w-full md:w-auto">
       		  <Link to="/" className="text-white">
-      			<img className="h-8 w-auto sm:h-24" src="/src/img/logo.png" alt="Logo"/>
+      			<img className="h-8 w-auto sm:h-24" src="./src/img/logo.png" alt="Logo"/>
       		  </Link>
       		  <div className="-mr-2 flex items-center md:hidden">
       			<button onClick={() => setExpanded(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
@@ -60,7 +60,7 @@ export default function Menu(props) {
       	  <div className="rounded-lg bg-white shadow-xs overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
       		<div className={`px-5 pt-4 flex items-center justify-between ${expanded ? 'expanded' : 'hidden'}`}>
       		  <div>
-      			<img className="h-8 w-auto" src="/src/img/logo.png" alt="Logo"/>
+      			<img className="h-8 w-auto" src="./src/img/logo.png" alt="Logo"/>
       		  </div>
       		  <div className="-mr-2">
       			<button onClick={() => setExpanded(false)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Close menu">
@@ -103,7 +103,7 @@ export default function Menu(props) {
       </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="/src/img/feld.jpg" alt=""/>
+      <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="./src/img/feld.jpg" alt=""/>
       </div>
       </div>
   );

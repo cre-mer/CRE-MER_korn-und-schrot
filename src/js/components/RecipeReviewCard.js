@@ -20,7 +20,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 /*
  * Import internal dependencies
  */
-const ListItems = lazy(() => import('./ListItems'));
+import ListItems from './ListItems';
 import ErrorBoundary from './ErrorBoundary';
 import SimplePopper from './SimplePopper';
 
@@ -98,13 +98,13 @@ export default function RecipeReviewCard(props) {
 				aria-label="show more"
 			>
 				<SimplePopper buttonText={<AddIcon />} content="beidqhw" title="Zutaten: " content={
-					<ErrorBoundary>
+					<>
 						<ListItems list={list}/>
 					<Typography variant="h5" gutterBottom>
 						Zubereitung:
 					</Typography>
 					{ content }
-					</ErrorBoundary>
+					</>
 				}/>
 			</IconButton>
 		</CardActions>
